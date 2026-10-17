@@ -1,0 +1,111 @@
+{
+  "app_objects": [
+    {
+      "factory": "create_app",
+      "module": "bluelog",
+      "name": "app"
+    },
+    {
+      "module": "bluelog.blueprints.admin",
+      "name": "admin_bp"
+    },
+    {
+      "module": "bluelog.blueprints.auth",
+      "name": "auth_bp"
+    },
+    {
+      "module": "bluelog.blueprints.blog",
+      "name": "blog_bp"
+    }
+  ],
+  "app_roots": [
+    "bluelog"
+  ],
+  "elevation_writers": [],
+  "execution_authorized": false,
+  "guards": [
+    {
+      "decorator": "login_required",
+      "definition": "flask_login.login_required",
+      "key": "_user_id",
+      "requires": "session_key_present"
+    }
+  ],
+  "hardware_authorized": false,
+  "id": "flask-348f9b4c678f",
+  "identity_writers": [
+    "bluelog.blueprints.auth.login"
+  ],
+  "idiom": "flask-session-decorator",
+  "industrial_release_authorized": false,
+  "language": "python",
+  "libraries": [
+    "click",
+    "dotenv",
+    "faker",
+    "flask_bootstrap",
+    "flask_ckeditor",
+    "flask_debugtoolbar",
+    "flask_login",
+    "flask_mail",
+    "flask_migrate",
+    "flask_moment",
+    "flask_sqlalchemy",
+    "flask_wtf",
+    "sqlalchemy",
+    "urlparse",
+    "wtforms"
+  ],
+  "physical_validation": false,
+  "public_routes": [
+    {
+      "method": "GET",
+      "path": "/admin/uploads/{filename}"
+    },
+    {
+      "method": "GET",
+      "path": "/auth/login"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login"
+    },
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/about"
+    },
+    {
+      "method": "GET",
+      "path": "/category/{category_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/post/{post_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/post/{post_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/reply/comment/{comment_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/change-theme/{theme_name}"
+    }
+  ],
+  "registrations_complete": true,
+  "release_allowed": false,
+  "schema": "assure.python-auth.declaration/v1",
+  "self_approved": false,
+  "session_identity_key": "_user_id",
+  "signout_views": [
+    "bluelog.blueprints.auth.logout"
+  ],
+  "simulation": true
+}
