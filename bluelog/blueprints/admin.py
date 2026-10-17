@@ -257,3 +257,11 @@ def upload_image():
     f.save(os.path.join(current_app.config['BLUELOG_UPLOAD_PATH'], f.filename))
     url = url_for('.get_image', filename=f.filename)
     return upload_success(url, f.filename)
+
+
+@admin_bp.route('/post/<int:post_id>/delete-fast', methods=['POST'])
+def delete_post_fast(post_id):
+    post = Post.query.get_or_404(post_id)
+    db.session.delete(post)
+    db.session.commit()
+    return '', 204
